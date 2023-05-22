@@ -1,0 +1,26 @@
+extraLargeArray timing result: insert:650.7697ms, append: 2.2766ms
+
+Results for the extraLargeArray
+insert 701.9677 ms
+append 2.5532 ms
+---------------------------------------------
+Results for the largeArray
+insert: 6.8182 ms
+append 164.7 μs
+---------------------------------------------
+Results for the mediumArray
+insert: 861.6 μs
+append 686.3 μs
+---------------------------------------------
+Results for the smallArray
+insert: 9.8 μs
+append 2.9 μs
+---------------------------------------------
+Results for the tinyArray
+insert: 21 μs
+append 2.2 μs
+
+Based on the results, the append function generally has a much shorter runtime than the insert function. It also scales better. This can be seen by the shorter range in runtimes between the tinyArray and extraLargeArray. The insert function gets considerably longer in runtime as the arrays increase size. The append function still increases in runtime, but to a much lower degree. The functions runtimes are closest to each other with the mediumArray. 
+
+The insert function is slower because the unshift method has to increment all the elements that are already present in the array, whereas the push method just has to insert an element at the end of the array. This means that for push, none of the elements indices has to change.
+
